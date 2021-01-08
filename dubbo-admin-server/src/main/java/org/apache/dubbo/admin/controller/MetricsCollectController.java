@@ -63,7 +63,7 @@ public class MetricsCollectController {
     @RequestMapping(method = RequestMethod.POST)
     public String metricsCollect(@RequestParam String group, @PathVariable String env) {
         MetrcisCollectServiceImpl service = new MetrcisCollectServiceImpl();
-        service.setUrl("dubbo://127.0.0.1:20880?scope=remote&cache=true");
+        service.setUrl("dubbo://localhost:20880?scope=remote&cache=true");
 
         return service.invoke(group).toString();
     }
